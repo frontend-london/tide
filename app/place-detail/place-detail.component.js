@@ -9,7 +9,9 @@ angular.
       function PlaceDetailController($routeParams, Place) {
         var self = this;
         self.place = Place.get({placeId: $routeParams.placeId}, function(place) {
-          self.setImage(place.images[0]);
+          // debugger; 
+          // self.setImage(place.images[0]);
+          self.setImage(place.result.photos[0]);
         });
 
         self.setImage = function setImage(imageUrl) {

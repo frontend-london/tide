@@ -59,13 +59,14 @@ time:  {{period.close.time}}
 <div>
 Reviews:
 <ul>
-<li ng-repeat="review in $ctrl.place.result.reviews">
-  <a href="{{review.author_url}}"><img src="{{review.profile_photo_url}}" alt="{{review.author_name}}" /></a>
-  {{review.text}}
-</li>
-
-
+  <li ng-repeat="review in $ctrl.place.result.reviews" ng-include src="'myPartial'">
+    
+  </li>
 </ul>
 </div>
 
 
+<script type="text/ng-template" id="myPartial">
+  <a href="{{review.author_url}}"><img src="{{review.profile_photo_url}}" alt="{{review.author_name}}" /></a>
+  {{review.text}}
+</script>
