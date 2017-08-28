@@ -8,7 +8,7 @@ angular.
     controller: ['Place',
       function PlaceListController(Place) {
         this.places = Place.query();
-        this.orderProp = 'age';
+        this.orderProp = 'importance';
       }
     ]
   });

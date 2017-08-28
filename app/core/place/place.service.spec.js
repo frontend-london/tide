@@ -36,8 +36,6 @@ describe('Place', function() {
   it('should fetch the places data from `/places/places.json`', function() {
     var places = Place.query();
 
-    console.info('places', places);
-
     expect(places).toEqual({});
 
     $httpBackend.flush();

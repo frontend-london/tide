@@ -12,9 +12,12 @@ describe('placeList', function() {
     beforeEach(inject(function($componentController, _$httpBackend_) {
       $httpBackend = _$httpBackend_;
       $httpBackend.expectGET('places/places.json')
-                  .respond({
-                    results: [{name: 'Nexus S'}, {name: 'Motorola DROID'}]
-                  });
+        .respond({
+          results: [
+            {name: 'Place 1'}, 
+            {name: 'Place 2'}
+          ]
+        });
 
       ctrl = $componentController('placeList');
     }));
@@ -26,12 +29,15 @@ describe('placeList', function() {
 
       $httpBackend.flush();
       expect(ctrl.places).toEqual({
-        results: [{name: 'Nexus S'}, {name: 'Motorola DROID'}]
+        results: [
+          {name: 'Place 1'}, 
+          {name: 'Place 2'}
+        ]
       });
     });
 
     it('should set a default value for the `orderProp` property', function() {
-      expect(ctrl.orderProp).toBe('age');
+      expect(ctrl.orderProp).toBe('importance');
     });
 
   });

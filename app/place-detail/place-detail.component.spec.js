@@ -9,8 +9,14 @@ describe('placeDetail', function() {
   describe('PlaceDetailController', function() {
     var $httpBackend, ctrl;
     var xyzPlaceData = {
-      name: 'place xyz',
-      images: ['image/url1.png', 'image/url2.png']
+      name: 'Place xyz',
+      result: {
+        photos: [
+          {photo_reference: 'CmRaAAAAN..'}, 
+          {photo_reference: 'kRVw9-ydv..'}
+        ]
+      }
+      
     };
 
     beforeEach(inject(function($componentController, _$httpBackend_, $routeParams) {
