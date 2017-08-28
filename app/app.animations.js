@@ -1,8 +1,8 @@
 'use strict';
 
 angular.
-  module('phonecatApp').
-  animation('.phone', function phoneAnimationFactory() {
+  module('localPlacesApp').
+  animation('.place', function placeAnimationFactory() {
     return {
       addClass: animateIn,
       removeClass: animateOut

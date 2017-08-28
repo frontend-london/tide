@@ -1,10 +1,10 @@
 'use strict';
 
-// Define the `phonecatApp` module
-angular.module('phonecatApp', [
+// Define the `localPlacesApp` module
+angular.module('localPlacesApp', [
   'ngAnimate',
   'ngRoute',
   'core',
-  'phoneDetail',
-  'phoneList'
+  'placeDetail',
+  'placeList'
 ]);

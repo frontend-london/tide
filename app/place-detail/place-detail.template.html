@@ -1,0 +1,71 @@
+<div class="place-images">
+  <img ng-repeat="img in $ctrl.place.result.photos" 
+    ng-src="{{ 'https://maps.googleapis.com/maps/api/place/photo?maxheight=400&maxwidth=400&key=AIzaSyC0on6d3nbJ8amjRosKkMXElJJe_RujTlg&photoreference=' + img.photo_reference}}" 
+    alt="{{$ctrl.place.result.name}}" 
+    class="place"
+    ng-class="{selected: img === $ctrl.mainImageUrl}" />
+</div>
+
+<h1>{{$ctrl.place.result.name}}</h1>
+
+<p>Address: {{$ctrl.place.result.formatted_address}}</p>
+
+<p>Phone number: {{$ctrl.place.result.international_place_number}}</p>
+
+<p>Price level: {{$ctrl.place.result.price_level}}</p>
+<p>Rating: {{$ctrl.place.result.rating}}</p>
+
+<p>{{$ctrl.place.result.opening_hours.open_now ? 'Open' : 'Closed'}} now</p>
+
+<p>Url: {{$ctrl.place.result.url}}</p>
+
+<p>Website: {{$ctrl.place.result.website}}</p>
+
+<div>
+  Opening hours:
+  <ul>
+    <li ng-repeat="period in $ctrl.place.result.opening_hours.periods">
+
+Open 
+<span ng-if="period.open.day !== $ctrl.place.result.opening_hours.periods[$index - 1].open.day ">
+day:  {{period.open.day}}  
+</span>
+time:  {{period.open.time}} 
+
+Close:
+<span ng-if="period.close.day !== period.open.day">
+day  {{period.close.day}} 
+</span>
+time:  {{period.close.time}} 
+    </li>
+  </ul>
+</div>
+
+<div>Types:
+    <ul>
+        <li ng-repeat="type in $ctrl.place.result.types">
+          {{type}},
+        </li>
+    </ul>
+  </div>
+
+
+<ul class="place-thumbs">
+  <li ng-repeat="img in $ctrl.place.result.photos">
+    <img ng-src="{{ 'https://maps.googleapis.com/maps/api/place/photo?maxheight=400&maxwidth=400&key=AIzaSyC0on6d3nbJ8amjRosKkMXElJJe_RujTlg&photoreference=' + img.photo_reference}}" alt="{{$ctrl.place.result.name}}"  ng-click="$ctrl.setImage(img)" />
+  </li>
+</ul>
+
+<div>
+Reviews:
+<ul>
+<li ng-repeat="review in $ctrl.place.result.reviews">
+  <a href="{{review.author_url}}"><img src="{{review.profile_photo_url}}" alt="{{review.author_name}}" /></a>
+  {{review.text}}
+</li>
+
+
+</ul>
+</div>
+
+
