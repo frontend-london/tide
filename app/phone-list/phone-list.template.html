@@ -16,6 +16,10 @@
       </p>
 
       <p>
+        Open now <input type="checkbox" name="opennow" />
+      </p>
+
+      <p>
         Search:
         <input ng-model="$ctrl.query" />
       </p>
@@ -23,8 +27,8 @@
       <p>
         Sort by:
         <select ng-model="$ctrl.orderProp">
-          <option value="name">Alphabetical</option>
-          <option value="age">Newest</option>
+          <option value="name">Importance</option>
+          <option value="age">Distance</option>
         </select>
       </p>
 
@@ -55,6 +59,8 @@
           </div>
         </li>
       </ul>
+
+      <a href="#">Next page</a>
 
     </div>
   </div>
