@@ -6,16 +6,16 @@ describe('placeDetail', function() {
   beforeEach(module('placeDetail'));
 
   // Test the controller
-  describe('PhoneDetailController', function() {
+  describe('PlaceDetailController', function() {
     var $httpBackend, ctrl;
-    var xyzPhoneData = {
+    var xyzPlaceData = {
       name: 'place xyz',
       images: ['image/url1.png', 'image/url2.png']
     };
 
     beforeEach(inject(function($componentController, _$httpBackend_, $routeParams) {
       $httpBackend = _$httpBackend_;
-      $httpBackend.expectGET('places/xyz.json').respond(xyzPhoneData);
+      $httpBackend.expectGET('places/xyz.json').respond(xyzPlaceData);
 
       $routeParams.placeId = 'xyz';
 
@@ -28,7 +28,7 @@ describe('placeDetail', function() {
       expect(ctrl.place).toEqual({});
 
       $httpBackend.flush();
-      expect(ctrl.place).toEqual(xyzPhoneData);
+      expect(ctrl.place).toEqual(xyzPlaceData);
     });
 
   });

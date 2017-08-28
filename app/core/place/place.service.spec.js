@@ -1,28 +1,30 @@
 'use strict';
 
-describe('Phone', function() {
+describe('Place', function() {
   var $httpBackend;
-  var Phone;
-  var placesData = [
-    {name: 'Phone X'},
-    {name: 'Phone Y'},
-    {name: 'Phone Z'}
-  ];
+  var Place;
+  var placesData = {
+    results: [
+      {name: 'Place X'},
+      {name: 'Place Y'},
+      {name: 'Place Z'}
+    ]  
+  };
 
   // Add a custom equality tester before each test
   beforeEach(function() {
     jasmine.addCustomEqualityTester(angular.equals);
   });
 
-  // Load the module that contains the `Phone` service before each test
+  // Load the module that contains the `Place` service before each test
   beforeEach(module('core.place'));
 
   // Instantiate the service and "train" `$httpBackend` before each test
-  beforeEach(inject(function(_$httpBackend_, _Phone_) {
+  beforeEach(inject(function(_$httpBackend_, _Place_) {
     $httpBackend = _$httpBackend_;
     $httpBackend.expectGET('places/places.json').respond(placesData);
 
-    Phone = _Phone_;
+    Place = _Place_;
   }));
 
   // Verify that there are no outstanding expectations or requests after each test
@@ -32,9 +34,11 @@ describe('Phone', function() {
   });
 
   it('should fetch the places data from `/places/places.json`', function() {
-    var places = Phone.query();
+    var places = Place.query();
 
-    expect(places).toEqual([]);
+    console.info('places', places);
+
+    expect(places).toEqual({});
 
     $httpBackend.flush();
     expect(places).toEqual(placesData);

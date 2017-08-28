@@ -5,9 +5,9 @@ angular.
   module('placeList').
   component('placeList', {
     templateUrl: 'place-list/place-list.template.html',
-    controller: ['Phone',
-      function PhoneListController(Phone) {
-        this.places = Phone.query();
+    controller: ['Place',
+      function PlaceListController(Place) {
+        this.places = Place.query();
         this.orderProp = 'age';
       }
     ]

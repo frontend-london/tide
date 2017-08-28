@@ -5,10 +5,10 @@ angular.
   module('placeDetail').
   component('placeDetail', {
     templateUrl: 'place-detail/place-detail.template.html',
-    controller: ['$routeParams', 'Phone',
-      function PhoneDetailController($routeParams, Phone) {
+    controller: ['$routeParams', 'Place',
+      function PlaceDetailController($routeParams, Place) {
         var self = this;
-        self.place = Phone.get({placeId: $routeParams.placeId}, function(place) {
+        self.place = Place.get({placeId: $routeParams.placeId}, function(place) {
           self.setImage(place.images[0]);
         });
 
