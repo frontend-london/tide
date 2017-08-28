@@ -1,7 +1,19 @@
 <div class="container-fluid">
   <div class="row">
+    <div class="col-md-12">
+      <h2>Pubs and restaurants nearby:</h2>
+    </div>
     <div class="col-md-2">
       <!--Sidebar content-->
+
+      <p>
+        Type:
+        <select ng-model="$ctrl.typeProp">
+          <option value="name">Pubs and restaurants</option>
+          <option value="name">Pubs</option>
+          <option value="name">Restaurants</option>
+        </select>
+      </p>
 
       <p>
         Search:
