@@ -33,13 +33,26 @@
       <!--Body content-->
 
       <ul class="phones">
-        <li ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp"
+        <li ng-repeat="phone in $ctrl.phones.results | filter:$ctrl.query | orderBy:$ctrl.orderProp"
             class="thumbnail phone-list-item">
           <a href="#!/phones/{{phone.id}}" class="thumb">
-            <img ng-src="{{phone.imageUrl}}" alt="{{phone.name}}" />
+            <img ng-src="{{phone.icon}}" alt="{{phone.name}}" />
+            <img ng-src="{{ 'https://maps.googleapis.com/maps/api/place/photo?maxheight=400&maxwidth=400&key=AIzaSyC0on6d3nbJ8amjRosKkMXElJJe_RujTlg&photoreference=' + phone.photos[0].photo_reference}}" alt="{{phone.name}}" />
+            
           </a>
+          
           <a href="#!/phones/{{phone.id}}">{{phone.name}}</a>
-          <p>{{phone.snippet}}</p>
+          <p>{{phone.opening_hours.open_now ? 'Open' : 'Closed'}} now</p>
+          <p>Price level: {{phone.price_level}}</p>
+          <p>Rating: {{phone.rating}}</p>
+          <p>Address: {{phone.vicinity}}</p>
+          <div>Types:
+            <ul>
+                <li ng-repeat="type in phone.types">
+                  {{type}},
+                </li>
+            </ul>
+          </div>
         </li>
       </ul>
 
