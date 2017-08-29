@@ -3,37 +3,40 @@
     <div class="col-md-12">
       <h2>Pubs and restaurants nearby: {{$ctrl.address.results[0].formatted_address}}</h2> 
     </div>
-    <div class="col-md-2">
+    <div class="col-md-3">
       <!--Sidebar content-->
+      <form>
+        <div class="form-group">
+          <label for="typeField">Type:</label>
 
-      <p>
-        Type:
-        <select ng-model="$ctrl.typeProp" ng-change="$ctrl.updateResults()">
-          <option value="restaurant|bar">Pubs and restaurants</option>
-          <option value="bar">Pubs</option>
-          <option value="restaurant">Restaurants</option>
-        </select>
-      </p>
+          <select ng-model="$ctrl.typeProp" class="form-control" id="typeField" ng-change="$ctrl.updateResults()">
+            <option value="restaurant|bar">Pubs and restaurants</option>
+            <option value="bar">Pubs</option>
+            <option value="restaurant">Restaurants</option>
+          </select>
+        </div>
 
-      <p>
-        Open now <input type="checkbox" ng-model="$ctrl.openProp" ng-change="$ctrl.updateResults()" />
-      </p>
+        <div class="checkbox">
+          <label>
+              <input type="checkbox" ng-model="$ctrl.openProp" ng-change="$ctrl.updateResults()" /> <strong>Open now</strong>
+          </label>
+        </div>
 
-      <p>
-        Search:
-        <input ng-model="$ctrl.query" />
-      </p>
+        <div class="form-group">
+            <label for="searchField">Search:</label>
+            <input ng-model="$ctrl.query" class="form-control" id="searchField" />
+        </div>
 
-      <p>
-        Sort by:
-        <select ng-model="$ctrl.orderProp" ng-change="$ctrl.updateResults()">
-          <option value="prominence">Importance</option>
-          <option value="distance">Distance</option>
-        </select>
-      </p>
-
+        <div class="form-group">
+            <label for="sortByField">Sort by:</label>
+            <select ng-model="$ctrl.orderProp" class="form-control" id="sortByField" ng-change="$ctrl.updateResults()">
+              <option value="prominence">Importance</option>
+              <option value="distance">Distance</option>
+            </select>
+        </div>
+      </form>
     </div>
-    <div class="col-md-10">
+    <div class="col-md-9">
       <!--Body content-->
 
       <ul class="places">
