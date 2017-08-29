@@ -19,9 +19,9 @@ describe('placeDetail', function() {
       }      
     };
 
-    beforeEach(inject(function($componentController, _$httpBackend_, $routeParams) {
+    beforeEach(inject(function($componentController, _$httpBackend_, $routeParams, _config_) {
       $httpBackend = _$httpBackend_;
-      $httpBackend.expectGET('api/place.json?key=AIzaSyC0on6d3nbJ8amjRosKkMXElJJe_RujTlg').respond(xyzPlaceData);
+      $httpBackend.expectGET(_config_.placeApi + '?key=' + _config_.apiKey).respond(xyzPlaceData);
 
       $routeParams.placeid = 'xyz';
 

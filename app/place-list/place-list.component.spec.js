@@ -23,13 +23,15 @@ describe('placeList', function() {
         ]
       };
 
-    beforeEach(inject(function($componentController, _$httpBackend_, _config_) {
+    beforeEach(inject(function($componentController, _$httpBackend_, _placeListConfig_, _config_) {
       $httpBackend = _$httpBackend_;
       config = _config_;
-      $httpBackend.expectGET('api/address.json?key=AIzaSyC0on6d3nbJ8amjRosKkMXElJJe_RujTlg&latlng=51.5222735,-0.1118921,17')
+
+      $httpBackend.expectGET(encodeURI(config.addressApi + '?key=' + config.apiKey + '&latlng=' + config.defaultLocation))
         .respond(addressObj);
 
-      $httpBackend.expectGET('api/places.json?key=AIzaSyC0on6d3nbJ8amjRosKkMXElJJe_RujTlg&location=51.5222735,-0.1118921,17&opennow=false&radius=1000&rankby=prominence&type=restaurant%7Cbar')
+      $httpBackend.expectGET(encodeURI(config.placesApi + '?key=' + config.apiKey + '&location=' + config.defaultLocation + 
+        '&opennow=' + _placeListConfig_.open +'&radius=' + config.defaultRadius + '&rankby=' + _placeListConfig_.order + '&type=' + _placeListConfig_.type))
       .respond(placesObj);
 
       ctrl = $componentController('placeList');
@@ -37,7 +39,7 @@ describe('placeList', function() {
 
     it('should create a `places` property with 2 places fetched with `$http`', function() {
       jasmine.addCustomEqualityTester(angular.equals);
-      ctrl.updateResults();
+      ctrl.getAddressAndPlaces();
 
       expect(ctrl.address).toEqual({});
       expect(ctrl.places).toEqual({});

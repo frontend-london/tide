@@ -9,7 +9,7 @@
         <div class="form-group">
           <label for="typeField">Type:</label>
 
-          <select ng-model="$ctrl.data.type" class="form-control" id="typeField" ng-change="$ctrl.updateResults()">
+          <select ng-model="$ctrl.data.type" class="form-control" id="typeField" ng-change="$ctrl.getPlaces()">
             <option value="restaurant|bar">Pubs and restaurants</option>
             <option value="bar">Pubs</option>
             <option value="restaurant">Restaurants</option>
@@ -18,7 +18,7 @@
 
         <div class="checkbox">
           <label>
-              <input type="checkbox" ng-model="$ctrl.data.open" ng-change="$ctrl.updateResults()" /> <strong>Open now</strong>
+              <input type="checkbox" ng-model="$ctrl.data.open" ng-change="$ctrl.getPlaces()" /> <strong>Open now</strong>
           </label>
         </div>
 
@@ -29,7 +29,7 @@
 
         <div class="form-group">
             <label for="sortByField">Sort by:</label>
-            <select ng-model="$ctrl.data.order" class="form-control" id="sortByField" ng-change="$ctrl.updateResults()">
+            <select ng-model="$ctrl.data.order" class="form-control" id="sortByField" ng-change="$ctrl.getPlaces()">
               <option value="prominence">Importance</option>
               <option value="distance">Distance</option>
             </select>
