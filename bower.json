@@ -1,8 +1,8 @@
 {
-  "name": "angular-phonecat",
-  "description": "A starter project for AngularJS",
-  "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-phonecat",
+  "name": "local-places-app",
+  "description": "Application showing Pubs and Restaurants in Neighbourhood",
+  "version": "1.0.0",
+  "homepage": "https://github.com/frontend-london/tide",
   "license": "MIT",
   "private": true,
   "dependencies": {

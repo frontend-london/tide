@@ -66,8 +66,8 @@ For unit testing I'm using [Jasmine][jasmine] and [Karma][karma] libraries
 ## Application Directory Layout
 
 ```
-api/...             --> static JSON files with places data (used to fake a backend API)
 app/                     --> all the source code of the app (along with unit tests)
+  api/...                --> static JSON files with places data (used to fake a backend API)
   bower_components/...   --> 3rd party JS/CSS libraries, including Angular and jQuery
   core/                  --> all the source code of the core module (stuff used throughout the app)
     address/...          --> files for the `address` filter, including JS source code, specs
