@@ -5,8 +5,8 @@ angular.
   module('placeList').
   component('placeList', {
     templateUrl: 'place-list/place-list.template.html',
-    controller: ['Places',
-      function PlaceListController(Places) {
+    controller: ['Places', 'Address',
+      function PlaceListController(Places, Address) {
         var self = this;
 
         this.key = 'AIzaSyC0on6d3nbJ8amjRosKkMXElJJe_RujTlg';
@@ -31,6 +31,11 @@ angular.
         }
 
         self.updateResults = function() {
+          this.address = Address.get({
+            key: this.key,
+            latlng: this.location
+          });
+
           this.places = Places.get({
             location: this.location,
             rankby: this.orderProp,

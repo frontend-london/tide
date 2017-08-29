@@ -1,4 +1,4 @@
 'use strict';
 
-// Define the `core.place` module
+// Define the `core.places` module
 angular.module('core.places', ['ngResource']);
