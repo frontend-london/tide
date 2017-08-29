@@ -5,8 +5,8 @@ angular.
   module('placeList').
   component('placeList', {
     templateUrl: 'place-list/place-list.template.html',
-    controller: ['Places', 'Address',
-      function PlaceListController(Places, Address) {
+    controller: ['$location', 'Places', 'Address',
+      function PlaceListController($location, Places, Address) {
         var self = this;
 
         this.key = 'AIzaSyC0on6d3nbJ8amjRosKkMXElJJe_RujTlg';
@@ -21,6 +21,10 @@ angular.
           self.location = position.coords.latitude + ',' + position.coords.longitude;
           self.updateResults();
         };
+
+        self.go = function(path) {
+          $location.path( path );
+        }
 
         self.getLocation = function() {
           if (navigator.geolocation) {
