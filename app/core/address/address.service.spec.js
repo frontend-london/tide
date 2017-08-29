@@ -5,9 +5,9 @@ describe('Address', function() {
   var Address;
   var addressData = {
     results: [
-      {name: 'Place X'},
-      {name: 'Place Y'},
-      {name: 'Place Z'}
+      {address_components: 'Place X'},
+      {address_components: 'Place Y'},
+      {address_components: 'Place Z'}
     ]  
   };
 
@@ -22,7 +22,7 @@ describe('Address', function() {
   // Instantiate the service and "train" `$httpBackend` before each test
   beforeEach(inject(function(_$httpBackend_, _Address_) {
     $httpBackend = _$httpBackend_;
-    $httpBackend.expectGET('address/address.json').respond(addressData);
+    $httpBackend.expectGET('api/address.json').respond(addressData);
 
     Address = _Address_;
   }));
@@ -33,7 +33,7 @@ describe('Address', function() {
     $httpBackend.verifyNoOutstandingRequest();
   });
 
-  it('should fetch the address data from `/address/address.json`', function() {
+  it('should fetch the address data from `/api/address.json`', function() {
     var addressQuery = Address.query();
 
     expect(addressQuery).toEqual({});

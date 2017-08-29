@@ -57,7 +57,6 @@ angular.
           this.updateResults();
         }
         
-        // this.updateResults();
         this.getLocation();
       }
     ]

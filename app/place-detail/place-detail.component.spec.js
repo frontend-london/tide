@@ -21,9 +21,9 @@ describe('placeDetail', function() {
 
     beforeEach(inject(function($componentController, _$httpBackend_, $routeParams) {
       $httpBackend = _$httpBackend_;
-      $httpBackend.expectGET('places/xyz.json').respond(xyzPlaceData);
+      $httpBackend.expectGET('api/place.json?key=AIzaSyC0on6d3nbJ8amjRosKkMXElJJe_RujTlg').respond(xyzPlaceData);
 
-      $routeParams.placeId = 'xyz';
+      $routeParams.placeid = 'xyz';
 
       ctrl = $componentController('placeDetail');
     }));

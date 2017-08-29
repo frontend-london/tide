@@ -22,7 +22,7 @@ describe('Places', function() {
   // Instantiate the service and "train" `$httpBackend` before each test
   beforeEach(inject(function(_$httpBackend_, _Places_) {
     $httpBackend = _$httpBackend_;
-    $httpBackend.expectGET('places/places.json').respond(placesData);
+    $httpBackend.expectGET('api/places.json').respond(placesData);
 
     Places = _Places_;
   }));
@@ -33,7 +33,7 @@ describe('Places', function() {
     $httpBackend.verifyNoOutstandingRequest();
   });
 
-  it('should fetch the places data from `/places/places.json`', function() {
+  it('should fetch the places data from `/api/places.json`', function() {
     var placesQuery = Places.query();
 
     expect(placesQuery).toEqual({});
