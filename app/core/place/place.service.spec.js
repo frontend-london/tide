@@ -1,15 +1,16 @@
 'use strict';
 
 describe('Place', function() {
-  var $httpBackend;
-  var Place;
-  var placesData = {
-    results: [
-      {name: 'Place X'},
-      {name: 'Place Y'},
-      {name: 'Place Z'}
-    ]  
-  };
+  var $httpBackend,
+      Place,
+      config,
+      placesData = {
+        results: [
+          {name: 'Place X'},
+          {name: 'Place Y'},
+          {name: 'Place Z'}
+        ]  
+      };
 
   // Add a custom equality tester before each test
   beforeEach(function() {
@@ -17,12 +18,14 @@ describe('Place', function() {
   });
 
   // Load the module that contains the `Place` service before each test
+  beforeEach(module('localPlacesApp'));
   beforeEach(module('core.place'));
 
   // Instantiate the service and "train" `$httpBackend` before each test
-  beforeEach(inject(function(_$httpBackend_, _Place_) {
+  beforeEach(inject(function(_$httpBackend_, _Place_, _config_) {
     $httpBackend = _$httpBackend_;
-    $httpBackend.expectGET('api/place.json').respond(placesData);
+    config = _config_;
+    $httpBackend.expectGET(config.placeApi).respond(placesData);
 
     Place = _Place_;
   }));

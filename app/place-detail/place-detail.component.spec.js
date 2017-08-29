@@ -16,8 +16,7 @@ describe('placeDetail', function() {
           {photo_reference: 'CmRaAAAAN..'}, 
           {photo_reference: 'kRVw9-ydv..'}
         ]
-      }
-      
+      }      
     };
 
     beforeEach(inject(function($componentController, _$httpBackend_, $routeParams) {

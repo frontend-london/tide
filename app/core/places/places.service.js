@@ -2,10 +2,9 @@
 
 angular.
   module('core.places').
-  factory('Places', ['$resource',
-    function($resource) {
-      // return $resource('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {}, {
-      return $resource('api/places.json', {}, {
+  factory('Places', ['$resource', 'config',
+    function($resource, config) {
+      return $resource(config.placesApi, {}, {
         query: {
           method: 'GET',
           params: {},
