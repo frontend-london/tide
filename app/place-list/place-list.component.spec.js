@@ -3,6 +3,7 @@
 describe('placeList', function() {
 
   // Load the module that contains the `placeList` component before each test
+  beforeEach(module('localPlacesApp'));
   beforeEach(module('placeList'));
 
   // Test the controller
