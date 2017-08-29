@@ -1,15 +1,16 @@
 'use strict';
 
 describe('Address', function() {
-  var $httpBackend;
-  var Address;
-  var addressData = {
-    results: [
-      {address_components: 'Place X'},
-      {address_components: 'Place Y'},
-      {address_components: 'Place Z'}
-    ]  
-  };
+  var $httpBackend,
+      Address,
+      config,
+      addressData = {
+        results: [
+          {address_components: 'Place X'},
+          {address_components: 'Place Y'},
+          {address_components: 'Place Z'}
+        ]  
+      };
 
   // Add a custom equality tester before each test
   beforeEach(function() {
@@ -17,12 +18,14 @@ describe('Address', function() {
   });
 
   // Load the module that contains the `Address` service before each test
+  beforeEach(module('localPlacesApp'));
   beforeEach(module('core.address'));
 
   // Instantiate the service and "train" `$httpBackend` before each test
-  beforeEach(inject(function(_$httpBackend_, _Address_) {
+  beforeEach(inject(function(_$httpBackend_, _Address_, _config_) {
     $httpBackend = _$httpBackend_;
-    $httpBackend.expectGET('api/address.json').respond(addressData);
+    config = _config_;
+    $httpBackend.expectGET(config.addressApi).respond(addressData);
 
     Address = _Address_;
   }));
@@ -33,7 +36,7 @@ describe('Address', function() {
     $httpBackend.verifyNoOutstandingRequest();
   });
 
-  it('should fetch the address data from `/api/address.json`', function() {
+  it('should fetch the address data from `config.addressApi`', function() {
     var addressQuery = Address.query();
 
     expect(addressQuery).toEqual({});

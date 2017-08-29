@@ -18,6 +18,8 @@ angular.
   ]).
   constant('config', {
     apiKey          : 'AIzaSyC0on6d3nbJ8amjRosKkMXElJJe_RujTlg',
+    addressApi      : 'api/address.json',
+    // addressApi   : 'https://maps.googleapis.com/maps/api/geocode/json',
     // placesApi    : 'https://maps.googleapis.com/maps/api/place/nearbysearch/json',
     placesApi       : 'api/places.json',
     // placesApi    : 'https://maps.googleapis.com/maps/api/place/nearbysearch/json',

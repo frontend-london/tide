@@ -2,10 +2,9 @@
 
 angular.
   module('core.address').
-  factory('Address', ['$resource',
-    function($resource) {
-      // return $resource('https://maps.googleapis.com/maps/api/geocode/json', {}, {
-      return $resource('api/address.json', {}, {
+  factory('Address', ['$resource', 'config',
+    function($resource, config) {
+      return $resource(config.addressApi, {}, {
         query: {
           method: 'GET',
           params: {},

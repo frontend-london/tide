@@ -36,7 +36,7 @@ describe('Place', function() {
     $httpBackend.verifyNoOutstandingRequest();
   });
 
-  it('should fetch the places data from `/api/place.json`', function() {
+  it('should fetch the places data from `config.placeApi`', function() {
     var places = Place.query();
 
     expect(places).toEqual({});
