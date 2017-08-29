@@ -5,13 +5,11 @@
   <div class="col-md-9">
     <div class="place-images">
       <img ng-repeat="img in $ctrl.place.result.photos" 
-        src="img/photo.jpg"
-        
+        ng-src="{{$ctrl.getImage(img.photo_reference)}}"
         alt="{{$ctrl.place.result.name}}" 
         class="place"
         ng-class="{selected: img === $ctrl.mainImageUrl}" />
     </div>
-    <!-- ng-src="{{ 'https://maps.googleapis.com/maps/api/place/photo?maxheight=400&maxwidth=400&key=AIzaSyC0on6d3nbJ8amjRosKkMXElJJe_RujTlg&photoreference=' + img.photo_reference}}"  -->
         
     <h1>{{$ctrl.place.result.name}}</h1>
 
@@ -66,8 +64,7 @@
 
 <ul class="place-thumbs">
   <li ng-repeat="img in $ctrl.place.result.photos">
-    <!-- <img ng-src="{{ 'https://maps.googleapis.com/maps/api/place/photo?maxheight=400&maxwidth=400&key=AIzaSyC0on6d3nbJ8amjRosKkMXElJJe_RujTlg&photoreference=' + img.photo_reference}}" alt="{{$ctrl.place.result.name}}"  ng-click="$ctrl.setImage(img)" /> -->
-    <img src="img/photo.jpg" alt="{{$ctrl.place.result.name}}"  ng-click="$ctrl.setImage(img)" />
+    <img ng-src="{{$ctrl.getImage(img.photo_reference)}}" alt="{{$ctrl.place.result.name}}"  ng-click="$ctrl.setImage(img)" />
   </li>
 </ul>
 

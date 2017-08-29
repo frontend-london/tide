@@ -13,6 +13,11 @@ angular.
           self.mainImageUrl = imageUrl;
         };
 
+        self.getImage = function(ref) {
+          // return 'img/photo.jpg';
+          return 'https://maps.googleapis.com/maps/api/place/photo?maxheight=400&maxwidth=400&key=AIzaSyC0on6d3nbJ8amjRosKkMXElJJe_RujTlg&photoreference=' + ref;
+        }
+
         self.place = Place.get({
           placeid: $routeParams.placeId,
           key: 'AIzaSyC0on6d3nbJ8amjRosKkMXElJJe_RujTlg'

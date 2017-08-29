@@ -26,6 +26,11 @@ angular.
           $location.path( path );
         }
 
+        self.getImage = function(ref) {
+          // return 'img/photo.jpg';
+          return 'https://maps.googleapis.com/maps/api/place/photo?maxheight=400&maxwidth=400&key=AIzaSyC0on6d3nbJ8amjRosKkMXElJJe_RujTlg&photoreference=' + ref;
+        }
+
         self.getLocation = function() {
           if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(self.updateLocation);
