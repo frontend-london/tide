@@ -47,24 +47,24 @@ describe('placeList', function() {
       expect(ctrl.places).toEqual(placesObj);
     });
 
-    it('should set a default value for the `orderProp` property', function() {
-      expect(ctrl.orderProp).toBe('prominence');
+    it('should set a default value for the `data.order` property', function() {
+      expect(ctrl.data.order).toBe('prominence');
     });
 
-    it('should set a default value for the `typeProp` property', function() {
-      expect(ctrl.typeProp).toBe('restaurant|bar');
+    it('should set a default value for the `data.type` property', function() {
+      expect(ctrl.data.type).toBe('restaurant|bar');
     });
 
-    it('should set a default value for the `openProp` property', function() {
-      expect(ctrl.openProp).toBe(false);
+    it('should set a default value for the `data.open` property', function() {
+      expect(ctrl.data.open).toBe(false);
     });
 
-    it('should set a default value for the `pageToken` property', function() {
-      expect(ctrl.pageToken).toBe(null);
+    it('should set a default value for the `data.nextPage` property', function() {
+      expect(ctrl.data.nextPage).toBe(null);
     });
 
-    it('should set a default value for the `location` property', function() {
-      expect(ctrl.location).toBe(config.defaultLocation);
+    it('should set a default value for the `data.location` property', function() {
+      expect(ctrl.data.location).toBe(config.defaultLocation);
     });
 
   });

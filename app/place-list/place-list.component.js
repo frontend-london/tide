@@ -3,20 +3,28 @@
 // Register `placeList` component, along with its associated controller and template
 angular.
   module('placeList').
+  value('placeListConfig', {
+    order   : 'prominence',
+    type    : 'restaurant|bar',
+    open    : false,
+    nextPage: null
+  }).
   component('placeList', {
     templateUrl: 'place-list/place-list.template.html',
-    controller: ['$location', 'Places', 'Address', 'config',
-      function PlaceListController($location, Places, Address, config) {
+    controller: ['$location', 'Places', 'Address', 'config', 'placeListConfig',
+      function PlaceListController($location, Places, Address, config, placeListConfig) {
         var self = this;
 
-        self.location = config.defaultLocation;
-        self.orderProp = 'prominence';
-        self.typeProp = 'restaurant|bar';
-        self.openProp = false;
-        self.pageToken = null;
+        self.data = {
+          location  : config.defaultLocation,
+          order     : placeListConfig.order,
+          type      : placeListConfig.type,
+          open      : placeListConfig.open,
+          nextPage  : placeListConfig.nextPage
+        }
 
         self.updateLocation = function(position) {
-          self.location = position.coords.latitude + ',' + position.coords.longitude;
+          self.data.location = position.coords.latitude + ',' + position.coords.longitude;
           self.updateResults();
         };
 
@@ -39,23 +47,23 @@ angular.
         self.updateResults = function() {
           this.address = Address.get({
             key: config.apiKey,
-            latlng: this.location
+            latlng: this.data.location
           });
 
           this.places = Places.get({
-            location: this.location,
-            rankby: this.orderProp,
-            type: this.typeProp,
-            radius: (this.orderProp === 'prominence') ? config.defaultRadius : null,
-            opennow: this.openProp,
-            pagetoken: this.pageToken,
-            key: config.apiKey
+            location  : this.data.location,
+            rankby    : this.data.order,
+            type      : this.data.type,
+            radius    : (this.data.order === 'prominence') ? config.defaultRadius : null,
+            opennow   : this.data.open,
+            pagetoken : this.data.nextPage,
+            key       : config.apiKey
           })
         };
 
         self.loadNextPage = function(token) {
           event.preventDefault();
-          this.pageToken = token;
+          this.data.nextPage = token;
           this.updateResults();
         }
         
