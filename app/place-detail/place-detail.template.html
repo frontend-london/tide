@@ -1,73 +1,85 @@
-<a href="#!/places">Go back</a>
-<div class="place-images">
-  <img ng-repeat="img in $ctrl.place.result.photos" 
-    ng-src="{{ 'https://maps.googleapis.com/maps/api/place/photo?maxheight=400&maxwidth=400&key=AIzaSyC0on6d3nbJ8amjRosKkMXElJJe_RujTlg&photoreference=' + img.photo_reference}}" 
-    alt="{{$ctrl.place.result.name}}" 
-    class="place"
-    ng-class="{selected: img === $ctrl.mainImageUrl}" />
-</div>
+<div class="row">
+  <div class="col-md-9">
 
-<h1>{{$ctrl.place.result.name}}</h1>
+    <a href="#!/places">Go back</a>
+    <div class="place-images">
+      <img ng-repeat="img in $ctrl.place.result.photos" 
+        src="img/photo.jpg"
+        
+        alt="{{$ctrl.place.result.name}}" 
+        class="place"
+        ng-class="{selected: img === $ctrl.mainImageUrl}" />
+    </div>
+    <!-- ng-src="{{ 'https://maps.googleapis.com/maps/api/place/photo?maxheight=400&maxwidth=400&key=AIzaSyC0on6d3nbJ8amjRosKkMXElJJe_RujTlg&photoreference=' + img.photo_reference}}"  -->
+        
+    <h1>{{$ctrl.place.result.name}}</h1>
 
-<p>Address: {{$ctrl.place.result.formatted_address}}</p>
+    <p>Address: {{$ctrl.place.result.formatted_address}}</p>
 
-<p>Place number: {{$ctrl.place.result.international_place_number}}</p>
+    <p>Place number: {{$ctrl.place.result.international_place_number}}</p>
 
-<p>Price level: {{$ctrl.place.result.price_level}}</p>
-<p>Rating: {{$ctrl.place.result.rating}}</p>
+    <p>Price level: {{$ctrl.place.result.price_level}}</p>
+    <p>Rating: {{$ctrl.place.result.rating}}</p>
 
-<p>{{$ctrl.place.result.opening_hours.open_now ? 'Open' : 'Closed'}} now</p>
+    <p>{{$ctrl.place.result.opening_hours.open_now ? 'Open' : 'Closed'}} now</p>
 
-<p>Url: {{$ctrl.place.result.url}}</p>
+    <p>Url: <a href="{{$ctrl.place.result.url}}" target="_blank">{{$ctrl.place.result.url}}</a></p>
 
-<p>Website: {{$ctrl.place.result.website}}</p>
+    <p ng-if="$ctrl.place.result.website">Website: <a href="{{$ctrl.place.result.website}}" target="_blank">{{$ctrl.place.result.website}}</a></p>
 
-<div>
-  Opening hours:
-  <ul>
-    <li ng-repeat="period in $ctrl.place.result.opening_hours.periods">
-
-Open 
-<span ng-if="period.open.day !== $ctrl.place.result.opening_hours.periods[$index - 1].open.day ">
-day:  {{period.open.day}}  
-</span>
-time:  {{period.open.time}} 
-
-Close:
-<span ng-if="period.close.day !== period.open.day">
-day  {{period.close.day}} 
-</span>
-time:  {{period.close.time}} 
-    </li>
-  </ul>
-</div>
-
-<div>Types:
-    <ul>
-        <li ng-repeat="type in $ctrl.place.result.types">
-          {{type}},
-        </li>
-    </ul>
+    <div>Types:
+        <ul class="places__types">
+          <li ng-repeat="type in $ctrl.place.result.types">
+            {{type}}
+          </li>
+      </ul>
+    </div>
   </div>
 
+  <div class="col-md-3">
+    <div  class="hours">
+      Opening hours:
+
+      <ul>
+        <li ng-repeat="period in $ctrl.place.result.opening_hours.periods">
+
+          <span class="hours__day">
+            <span ng-if="period.open.day !== $ctrl.place.result.opening_hours.periods[$index - 1].open.day ">
+              {{period.open.day | dayofweek}}  
+            </span>
+          </span>
+
+          {{period.open.time | timeformatted}} 
+
+          - 
+          <span ng-if="period.close.day !== period.open.day">
+            {{period.close.day | dayofweek}} 
+          </span>
+
+          {{period.close.time | timeformatted}} 
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 <ul class="place-thumbs">
   <li ng-repeat="img in $ctrl.place.result.photos">
-    <img ng-src="{{ 'https://maps.googleapis.com/maps/api/place/photo?maxheight=400&maxwidth=400&key=AIzaSyC0on6d3nbJ8amjRosKkMXElJJe_RujTlg&photoreference=' + img.photo_reference}}" alt="{{$ctrl.place.result.name}}"  ng-click="$ctrl.setImage(img)" />
+    <!-- <img ng-src="{{ 'https://maps.googleapis.com/maps/api/place/photo?maxheight=400&maxwidth=400&key=AIzaSyC0on6d3nbJ8amjRosKkMXElJJe_RujTlg&photoreference=' + img.photo_reference}}" alt="{{$ctrl.place.result.name}}"  ng-click="$ctrl.setImage(img)" /> -->
+    <img src="img/photo.jpg" alt="{{$ctrl.place.result.name}}"  ng-click="$ctrl.setImage(img)" />
   </li>
 </ul>
 
-<div>
-Reviews:
-<ul>
-  <li ng-repeat="review in $ctrl.place.result.reviews" ng-include src="'myPartial'">
-    
-  </li>
-</ul>
+<div class="row">
+    <div class="col-md-12">
+      <h4>Reviews:</h4>
+      <ul class="reviews">
+        <li ng-repeat="review in $ctrl.place.result.reviews" ng-include src="'myPartial'"></li>
+      </ul>
+    </div>
 </div>
 
-
 <script type="text/ng-template" id="myPartial">
-  <a href="{{review.author_url}}"><img src="{{review.profile_photo_url}}" alt="{{review.author_name}}" /></a>
+  <a href="{{review.author_url}}"><img src="{{review.profile_photo_url}}" alt="{{review.author_name}}" class="reviews__author" /></a>
   {{review.text}}
 </script>
