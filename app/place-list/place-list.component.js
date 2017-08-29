@@ -25,11 +25,6 @@ angular.
           })
         };
 
-      //   self.$watch('orderProp', function() {
-      //     debugger;
-      // });
-
-        // this.places = Places.query();
         this.key = 'AIzaSyC0on6d3nbJ8amjRosKkMXElJJe_RujTlg';
         this.location = '-33.8670522,151.1957362';
         this.orderProp = 'prominence';
