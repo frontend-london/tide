@@ -5,17 +5,15 @@ angular.
   module('placeList').
   component('placeList', {
     templateUrl: 'place-list/place-list.template.html',
-    controller: ['$location', 'Places', 'Address',
-      function PlaceListController($location, Places, Address) {
+    controller: ['$location', 'Places', 'Address', 'config',
+      function PlaceListController($location, Places, Address, config) {
         var self = this;
 
-        this.key = 'AIzaSyC0on6d3nbJ8amjRosKkMXElJJe_RujTlg';
-        this.location = '51.5222735,-0.1118921,17';
-        this.orderProp = 'prominence';
-        this.defaultRadius = 1000;
-        this.typeProp = 'restaurant|bar';
-        this.openProp = false;
-        this.pageToken = null;
+        self.location = config.defaultLocation;
+        self.orderProp = 'prominence';
+        self.typeProp = 'restaurant|bar';
+        self.openProp = false;
+        self.pageToken = null;
 
         self.updateLocation = function(position) {
           self.location = position.coords.latitude + ',' + position.coords.longitude;
@@ -27,8 +25,7 @@ angular.
         }
 
         self.getImage = function(ref) {
-          // return 'img/photo.jpg';
-          return 'https://maps.googleapis.com/maps/api/place/photo?maxheight=400&maxwidth=400&key=AIzaSyC0on6d3nbJ8amjRosKkMXElJJe_RujTlg&photoreference=' + ref;
+          return config.imagePath + '?maxheight=100&maxwidth=100&key=' + config.apiKey + '&photoreference=' + ref;
         }
 
         self.getLocation = function() {
@@ -41,7 +38,7 @@ angular.
 
         self.updateResults = function() {
           this.address = Address.get({
-            key: this.key,
+            key: config.apiKey,
             latlng: this.location
           });
 
@@ -49,10 +46,10 @@ angular.
             location: this.location,
             rankby: this.orderProp,
             type: this.typeProp,
-            radius: (this.orderProp === 'prominence') ? this.defaultRadius : null,
+            radius: (this.orderProp === 'prominence') ? config.defaultRadius : null,
             opennow: this.openProp,
             pagetoken: this.pageToken,
-            key: this.key
+            key: config.apiKey
           })
         };
 
