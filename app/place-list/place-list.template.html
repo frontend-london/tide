@@ -40,9 +40,10 @@
         <li ng-repeat="place in $ctrl.places.results | filter:$ctrl.query"
             class="thumbnail place-list-item">
           <a href="#!/places/{{place.place_id}}" class="thumb">
+            <!--
             <img ng-src="{{place.icon}}" alt="{{place.name}}" />
             <img ng-src="{{ 'https://maps.googleapis.com/maps/api/place/photo?maxheight=400&maxwidth=400&key=AIzaSyC0on6d3nbJ8amjRosKkMXElJJe_RujTlg&photoreference=' + place.photos[0].photo_reference}}" alt="{{place.name}}" />
-            
+            -->
           </a>
           
           <a href="#!/places/{{place.place_id}}">{{place.name}}</a>
@@ -58,9 +59,9 @@
             </ul>
           </div>
         </li>
-      </ul>
+      </ul>  
 
-      <a href="#">Next page</a>
+      <a href="#" ng-click="$ctrl.loadNextPage($ctrl.places.next_page_token)">Next page</a>
 
     </div>
   </div>

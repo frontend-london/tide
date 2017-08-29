@@ -5,14 +5,17 @@ angular.
   module('placeList').
   component('placeList', {
     templateUrl: 'place-list/place-list.template.html',
-    link: function($scope) {
-      $scope.$watch('orderProp', function() {
-         debugger;
-      });
-    },
     controller: ['Places',
       function PlaceListController(Places) {
         var self = this;
+
+        this.key = 'AIzaSyC0on6d3nbJ8amjRosKkMXElJJe_RujTlg';
+        this.location = '-33.8670522,151.1957362';
+        this.orderProp = 'prominence';
+        this.defaultRadius = 1000;
+        this.typeProp = 'restaurant|bar';
+        this.openProp = false;
+        this.pageToken = null;
 
         self.updateResults = function() {
           this.places = Places.get({
@@ -21,16 +24,17 @@ angular.
             type: this.typeProp,
             radius: (this.orderProp === 'prominence') ? this.defaultRadius : null,
             opennow: this.openProp,
+            pagetoken: this.pageToken,
             key: this.key
           })
         };
 
-        this.key = 'AIzaSyC0on6d3nbJ8amjRosKkMXElJJe_RujTlg';
-        this.location = '-33.8670522,151.1957362';
-        this.orderProp = 'prominence';
-        this.defaultRadius = 1000;
-        this.typeProp = 'restaurant|bar';
-        this.openProp = false;
+        self.loadNextPage = function(token) {
+          event.preventDefault();
+          this.pageToken = token;
+          this.updateResults();
+        }
+        
         this.updateResults();
       }
     ]
