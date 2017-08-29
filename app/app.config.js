@@ -25,7 +25,7 @@ angular.
     // placesApi    : 'https://maps.googleapis.com/maps/api/place/nearbysearch/json',
     placeApi        : 'api/place.json',
     // placeApi     : 'https://maps.googleapis.com/maps/api/place/details/json',
-    defaultLocation : '51.5222735,-0.1118921,17', // White Bear Yard
+    defaultLocation : '51.5222768,-0.111892117', // White Bear Yard
     defaultRadius   : 1000, 
     // imagePath    : 'https://maps.googleapis.com/maps/api/place/photo' // local - 'img/photo.jpg'
     imagePath       : 'img/photo.jpg' // local

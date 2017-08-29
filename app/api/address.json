@@ -3,13 +3,13 @@
       {
          "address_components" : [
             {
-               "long_name" : "9",
-               "short_name" : "9",
+               "long_name" : "1",
+               "short_name" : "1",
                "types" : [ "street_number" ]
             },
             {
-               "long_name" : "Endell Street",
-               "short_name" : "Endell St",
+               "long_name" : "Rosebery Avenue",
+               "short_name" : "A401",
                "types" : [ "route" ]
             },
             {
@@ -38,31 +38,115 @@
                "types" : [ "country", "political" ]
             },
             {
-               "long_name" : "WC2H 9BJ",
-               "short_name" : "WC2H 9BJ",
-               "types" : [ "postal_code" ]
+               "long_name" : "EC1R",
+               "short_name" : "EC1R",
+               "types" : [ "postal_code", "postal_code_prefix" ]
             }
          ],
-         "formatted_address" : "9 Endell St, London WC2H 9BJ, Wielka Brytania",
+         "formatted_address" : "1 Rosebery Ave, London EC1R, Wielka Brytania",
          "geometry" : {
-            "location" : {
-               "lat" : 51.5139262,
-               "lng" : -0.123884
-            },
-            "location_type" : "ROOFTOP",
-            "viewport" : {
+            "bounds" : {
                "northeast" : {
-                  "lat" : 51.5152751802915,
-                  "lng" : -0.122535019708498
+                  "lat" : 51.5224173,
+                  "lng" : -0.1118713
                },
                "southwest" : {
-                  "lat" : 51.5125772197085,
-                  "lng" : -0.125232980291502
+                  "lat" : 51.5220751,
+                  "lng" : -0.1122243
+               }
+            },
+            "location" : {
+               "lat" : 51.5223162,
+               "lng" : -0.1119941
+            },
+            "location_type" : "RANGE_INTERPOLATED",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 51.52359518029149,
+                  "lng" : -0.110698819708498
+               },
+               "southwest" : {
+                  "lat" : 51.5208972197085,
+                  "lng" : -0.113396780291502
                }
             }
          },
-         "place_id" : "ChIJ5VInuMwEdkgRz9t9hTSEDOI",
+         "place_id" : "Eh8xIFJvc2ViZXJ5IEF2ZSwgTG9uZG9uIEVDMVIsIFVL",
          "types" : [ "street_address" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "Rosebery Avenue (Stop CU)",
+               "short_name" : "Rosebery Avenue (Stop CU)",
+               "types" : [
+                  "bus_station",
+                  "establishment",
+                  "point_of_interest",
+                  "transit_station"
+               ]
+            },
+            {
+               "long_name" : "Londyn",
+               "short_name" : "Londyn",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "London",
+               "short_name" : "London",
+               "types" : [ "postal_town" ]
+            },
+            {
+               "long_name" : "Greater London",
+               "short_name" : "Greater London",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "England",
+               "short_name" : "England",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Wielka Brytania",
+               "short_name" : "GB",
+               "types" : [ "country", "political" ]
+            },
+            {
+               "long_name" : "EC1R 5EE",
+               "short_name" : "EC1R 5EE",
+               "types" : [ "postal_code" ]
+            },
+            {
+               "long_name" : "EC1R",
+               "short_name" : "EC1R",
+               "types" : [ "postal_code", "postal_code_prefix" ]
+            }
+         ],
+         "formatted_address" : "Rosebery Avenue (Stop CU), London EC1R 5EE, Wielka Brytania",
+         "geometry" : {
+            "location" : {
+               "lat" : 51.521919,
+               "lng" : -0.111694
+            },
+            "location_type" : "GEOMETRIC_CENTER",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 51.5232679802915,
+                  "lng" : -0.110345019708498
+               },
+               "southwest" : {
+                  "lat" : 51.5205700197085,
+                  "lng" : -0.113042980291502
+               }
+            }
+         },
+         "place_id" : "ChIJJz5qM0kbdkgRrSzGdDWRRoU",
+         "types" : [
+            "bus_station",
+            "establishment",
+            "point_of_interest",
+            "transit_station"
+         ]
       },
       {
          "address_components" : [
@@ -126,67 +210,13 @@
       {
          "address_components" : [
             {
-               "long_name" : "WC2H 9HZ",
-               "short_name" : "WC2H 9HZ",
+               "long_name" : "EC1R 4PG",
+               "short_name" : "EC1R 4PG",
                "types" : [ "postal_code" ]
             },
             {
-               "long_name" : "Londyn",
-               "short_name" : "Londyn",
-               "types" : [ "locality", "political" ]
-            },
-            {
-               "long_name" : "Londyn",
-               "short_name" : "Londyn",
-               "types" : [ "postal_town" ]
-            },
-            {
-               "long_name" : "Wielki Londyn",
-               "short_name" : "Wielki Londyn",
-               "types" : [ "administrative_area_level_2", "political" ]
-            },
-            {
-               "long_name" : "Anglia",
-               "short_name" : "Anglia",
-               "types" : [ "administrative_area_level_1", "political" ]
-            },
-            {
-               "long_name" : "Wielka Brytania",
-               "short_name" : "GB",
-               "types" : [ "country", "political" ]
-            }
-         ],
-         "formatted_address" : "Londyn WC2H 9HZ, Wielka Brytania",
-         "geometry" : {
-            "location" : {
-               "lat" : 51.5140968,
-               "lng" : -0.1243078
-            },
-            "location_type" : "APPROXIMATE",
-            "viewport" : {
-               "northeast" : {
-                  "lat" : 51.51544578029149,
-                  "lng" : -0.122958819708498
-               },
-               "southwest" : {
-                  "lat" : 51.5127478197085,
-                  "lng" : -0.125656780291502
-               }
-            }
-         },
-         "place_id" : "ChIJbfGFx8wEdkgRxplApczgDyc",
-         "types" : [ "postal_code" ]
-      },
-      {
-         "address_components" : [
-            {
-               "long_name" : "WC2H 9SA",
-               "short_name" : "WC2H 9SA",
-               "types" : [ "postal_code" ]
-            },
-            {
-               "long_name" : "Odhams Walk",
-               "short_name" : "Odhams Walk",
+               "long_name" : "Laystall Street",
+               "short_name" : "Laystall St",
                "types" : [ "route" ]
             },
             {
@@ -215,43 +245,38 @@
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Odhams Walk, London WC2H 9SA, Wielka Brytania",
+         "formatted_address" : "Laystall St, London EC1R 4PG, Wielka Brytania",
          "geometry" : {
-            "bounds" : {
-               "northeast" : {
-                  "lat" : 51.5141898,
-                  "lng" : -0.1234154
-               },
-               "southwest" : {
-                  "lat" : 51.5136581,
-                  "lng" : -0.124266
-               }
-            },
             "location" : {
-               "lat" : 51.51389289999999,
-               "lng" : -0.1239271
+               "lat" : 51.5226254,
+               "lng" : -0.1125793
             },
             "location_type" : "APPROXIMATE",
             "viewport" : {
                "northeast" : {
-                  "lat" : 51.51527293029149,
-                  "lng" : -0.122491719708498
+                  "lat" : 51.5239743802915,
+                  "lng" : -0.111230319708498
                },
                "southwest" : {
-                  "lat" : 51.5125749697085,
-                  "lng" : -0.125189680291502
+                  "lat" : 51.5212764197085,
+                  "lng" : -0.113928280291502
                }
             }
          },
-         "place_id" : "ChIJC70Po8wEdkgR58R1zaszRx4",
+         "place_id" : "ChIJD5pV0k4bdkgRUUPVKt0nlkQ",
          "types" : [ "postal_code" ]
       },
       {
          "address_components" : [
             {
-               "long_name" : "WC2H 9EL",
-               "short_name" : "WC2H 9EL",
+               "long_name" : "EC1R 5EQ",
+               "short_name" : "EC1R 5EQ",
                "types" : [ "postal_code" ]
+            },
+            {
+               "long_name" : "Clerkenwell Road",
+               "short_name" : "Clerkenwell Rd",
+               "types" : [ "route" ]
             },
             {
                "long_name" : "Londyn",
@@ -259,18 +284,18 @@
                "types" : [ "locality", "political" ]
             },
             {
-               "long_name" : "Londyn",
-               "short_name" : "Londyn",
+               "long_name" : "London",
+               "short_name" : "London",
                "types" : [ "postal_town" ]
             },
             {
-               "long_name" : "Wielki Londyn",
-               "short_name" : "Wielki Londyn",
+               "long_name" : "Greater London",
+               "short_name" : "Greater London",
                "types" : [ "administrative_area_level_2", "political" ]
             },
             {
-               "long_name" : "Anglia",
-               "short_name" : "Anglia",
+               "long_name" : "England",
+               "short_name" : "England",
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
@@ -279,42 +304,42 @@
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Londyn WC2H 9EL, Wielka Brytania",
+         "formatted_address" : "Clerkenwell Rd, London EC1R 5EQ, Wielka Brytania",
          "geometry" : {
             "bounds" : {
                "northeast" : {
-                  "lat" : 51.5141898,
-                  "lng" : -0.1234154
+                  "lat" : 51.5224373,
+                  "lng" : -0.1112923
                },
                "southwest" : {
-                  "lat" : 51.5136581,
-                  "lng" : -0.124266
+                  "lat" : 51.5220097,
+                  "lng" : -0.1119729
                }
             },
             "location" : {
-               "lat" : 51.51389289999999,
-               "lng" : -0.1239271
+               "lat" : 51.5222118,
+               "lng" : -0.1116496
             },
             "location_type" : "APPROXIMATE",
             "viewport" : {
                "northeast" : {
-                  "lat" : 51.51527293029149,
-                  "lng" : -0.122491719708498
+                  "lat" : 51.5235724802915,
+                  "lng" : -0.110283619708498
                },
                "southwest" : {
-                  "lat" : 51.5125749697085,
-                  "lng" : -0.125189680291502
+                  "lat" : 51.52087451970851,
+                  "lng" : -0.112981580291502
                }
             }
          },
-         "place_id" : "ChIJC70Po8wEdkgRnsKclca2LsE",
+         "place_id" : "ChIJhyOvMkkbdkgR3ZzHJEaAack",
          "types" : [ "postal_code" ]
       },
       {
          "address_components" : [
             {
-               "long_name" : "WC2H",
-               "short_name" : "WC2H",
+               "long_name" : "EC1R",
+               "short_name" : "EC1R",
                "types" : [ "postal_code", "postal_code_prefix" ]
             },
             {
@@ -343,42 +368,42 @@
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Londyn WC2H, Wielka Brytania",
+         "formatted_address" : "Londyn EC1R, Wielka Brytania",
          "geometry" : {
             "bounds" : {
                "northeast" : {
-                  "lat" : 51.5170374,
-                  "lng" : -0.1229976
+                  "lat" : 51.5308263,
+                  "lng" : -0.1031404
                },
                "southwest" : {
-                  "lat" : 51.50825099999999,
-                  "lng" : -0.1319318
+                  "lat" : 51.5213517,
+                  "lng" : -0.1131632
                }
             },
             "location" : {
-               "lat" : 51.5142805,
-               "lng" : -0.1284654
+               "lat" : 51.5267869,
+               "lng" : -0.1072012
             },
             "location_type" : "APPROXIMATE",
             "viewport" : {
                "northeast" : {
-                  "lat" : 51.5170374,
-                  "lng" : -0.1229976
+                  "lat" : 51.5308263,
+                  "lng" : -0.1031404
                },
                "southwest" : {
-                  "lat" : 51.50825099999999,
-                  "lng" : -0.1319318
+                  "lat" : 51.5213517,
+                  "lng" : -0.1131632
                }
             }
          },
-         "place_id" : "ChIJ5dr2k8wEdkgRnSWBd-onfPI",
+         "place_id" : "ChIJjS5-BUQbdkgRh93PEKcc1-0",
          "types" : [ "postal_code", "postal_code_prefix" ]
       },
       {
          "address_components" : [
             {
-               "long_name" : "City of Westminster",
-               "short_name" : "City of Westminster",
+               "long_name" : "London Borough of Camden",
+               "short_name" : "London Borough of Camden",
                "types" : [ "administrative_area_level_3", "political" ]
             },
             {
@@ -407,35 +432,35 @@
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "City of Westminster, Londyn, Wielka Brytania",
+         "formatted_address" : "London Borough of Camden, Londyn, Wielka Brytania",
          "geometry" : {
             "bounds" : {
                "northeast" : {
-                  "lat" : 51.5397932,
-                  "lng" : -0.1111016
+                  "lat" : 51.5729787,
+                  "lng" : -0.1053499
                },
                "southwest" : {
-                  "lat" : 51.4838163,
-                  "lng" : -0.2160886
+                  "lat" : 51.5126521,
+                  "lng" : -0.2135012
                }
             },
             "location" : {
-               "lat" : 51.5001754,
-               "lng" : -0.1332326
+               "lat" : 51.55170589999999,
+               "lng" : -0.1588255
             },
             "location_type" : "APPROXIMATE",
             "viewport" : {
                "northeast" : {
-                  "lat" : 51.5397932,
-                  "lng" : -0.1111016
+                  "lat" : 51.5729787,
+                  "lng" : -0.1053499
                },
                "southwest" : {
-                  "lat" : 51.4838163,
-                  "lng" : -0.2160886
+                  "lat" : 51.5126521,
+                  "lng" : -0.2135012
                }
             }
          },
-         "place_id" : "ChIJxwN8mDUFdkgRoGfsoi2uDgQ",
+         "place_id" : "ChIJPZprGOwadkgR4Ga-JsaFEQQ",
          "types" : [ "administrative_area_level_3", "political" ]
       },
       {
