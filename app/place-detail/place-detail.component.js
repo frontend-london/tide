@@ -8,19 +8,19 @@ angular.
     controller: ['$routeParams', 'Place',
       function PlaceDetailController($routeParams, Place) {
         var self = this;
-        self.place = Place.get({placeId: $routeParams.placeId}, function(place) {
-          // debugger; 
-          // self.setImage(place.images[0]);
 
+        self.setImage = function(imageUrl) {
+          self.mainImageUrl = imageUrl;
+        };
+
+        self.place = Place.get({
+          placeid: $routeParams.placeId,
+          key: 'AIzaSyC0on6d3nbJ8amjRosKkMXElJJe_RujTlg'
+        }, function(place) {
           if (place.result.photos) {
             self.setImage(place.result.photos[0]);
           }
-          
         });
-
-        self.setImage = function setImage(imageUrl) {
-          self.mainImageUrl = imageUrl;
-        };
       }
     ]
   });

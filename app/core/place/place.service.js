@@ -4,10 +4,11 @@ angular.
   module('core.place').
   factory('Place', ['$resource',
     function($resource) {
-      return $resource('api/:placeId.json', {}, {
+      return $resource('api/place.json', {}, {
+      // return $resource('https://maps.googleapis.com/maps/api/place/details/json', {}, {
         query: {
           method: 'GET',
-          params: {placeId: 'place'},
+          params: {},
           isArray: false
         }
       });
