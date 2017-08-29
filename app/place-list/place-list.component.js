@@ -24,6 +24,7 @@ angular.
         }
 
         self.updateLocation = function(position) {
+          debugger;
           self.data.location = position.coords.latitude + ',' + position.coords.longitude;
           self.updateResults();
         };
@@ -38,36 +39,36 @@ angular.
 
         self.getLocation = function() {
           if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(self.updateLocation);
+            navigator.geolocation.getCurrentPosition(self.updateLocation, self.updateResults);
           } else {
-            this.updateResults(); // show results for default location
+            self.updateResults();
           }
         }
 
         self.updateResults = function() {
-          this.address = Address.get({
+          self.address = Address.get({
             key: config.apiKey,
-            latlng: this.data.location
+            latlng: self.data.location
           });
 
-          this.places = Places.get({
-            location  : this.data.location,
-            rankby    : this.data.order,
-            type      : this.data.type,
-            radius    : (this.data.order === 'prominence') ? config.defaultRadius : null,
-            opennow   : this.data.open,
-            pagetoken : this.data.nextPage,
+          self.places = Places.get({
+            location  : self.data.location,
+            rankby    : self.data.order,
+            type      : self.data.type,
+            radius    : (self.data.order === 'prominence') ? config.defaultRadius : null,
+            opennow   : self.data.open,
+            pagetoken : self.data.nextPage,
             key       : config.apiKey
           })
         };
 
         self.loadNextPage = function(token) {
           event.preventDefault();
-          this.data.nextPage = token;
-          this.updateResults();
+          self.data.nextPage = token;
+          self.updateResults();
         }
         
-        this.getLocation();
+        self.getLocation();
       }
     ]
   });
