@@ -37,7 +37,7 @@ describe('Places', function() {
   });
 
   it('should fetch the places data from `config.placesApi`', function() {
-    var placesQuery = Places.query();
+    var placesQuery = Places.get();
 
     expect(placesQuery).toEqual({});
 

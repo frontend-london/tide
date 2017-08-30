@@ -5,7 +5,7 @@ angular.
   factory('Place', ['$resource', 'config',
     function($resource, config) {
       return $resource(config.placeApi, {}, {
-        query: {
+        get: {
           method: 'GET',
           params: {},
           isArray: false

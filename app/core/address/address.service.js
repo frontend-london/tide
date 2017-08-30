@@ -5,7 +5,7 @@ angular.
   factory('Address', ['$resource', 'config',
     function($resource, config) {
       return $resource(config.addressApi, {}, {
-        query: {
+        get: {
           method: 'GET',
           params: {},
           isArray: false

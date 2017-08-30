@@ -37,7 +37,7 @@ describe('Address', function() {
   });
 
   it('should fetch the address data from `config.addressApi`', function() {
-    var addressQuery = Address.query();
+    var addressQuery = Address.get();
 
     expect(addressQuery).toEqual({});
 
