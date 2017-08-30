@@ -92,6 +92,7 @@ app/                     --> all the source code of the app (along with unit tes
   place-list/...         --> files for the `placeList` module, including JS source code, HTML templates, specs
   proxy/...              --> PHP proxy to Google Places API
   app.animations.js      --> hooks for running JS animations with `ngAnimate`
+  app.routing.js         --> app routing configuration
   app.config.js          --> app-wide configuration of Angular services
   app.module.js          --> the main app module
   index.html             --> app layout file (the main HTML template file of the app)
