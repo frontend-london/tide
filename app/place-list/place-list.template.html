@@ -47,7 +47,8 @@
               <img ng-if="place.photos[0]" ng-src="{{$ctrl.getImage(place.photos[0].photo_reference)}}" alt="{{place.name}}" class="thumb" />
               <h4><img ng-src="{{place.icon}}" alt="{{place.name}}" class="places__icon" /> {{place.name}}</h4>
               <p><strong>{{place.opening_hours.open_now ? 'Open' : 'Closed'}}</strong> now</p>
-              <p><strong>Price level:</strong> {{place.price_level}} &nbsp; | &nbsp;  <strong>Rating:</strong> {{place.rating}}</p>
+              <p><strong>Price level:</strong> {{place.price_level | ratingformatted}} </p>  
+              <p><strong>Rating:</strong> {{place.rating | ratingformatted}}</p>
               <p><strong>Address:</strong> {{place.vicinity}}</p>
               <div><strong>Types:</strong>
                 <ul class="places__types">

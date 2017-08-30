@@ -42,6 +42,7 @@ h1 {
 .places__icon {
   width: 30px;
   height: 30px;
+  margin-bottom: 10px;
 }
 
 .places__types {

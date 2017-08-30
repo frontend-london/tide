@@ -17,8 +17,8 @@
 
     <p><strong>Phone number:</strong> {{$ctrl.place.result.international_place_number}}</p>
 
-    <p><strong>Price level:</strong> {{$ctrl.place.result.price_level}}</p>
-    <p><strong>Rating:</strong> {{$ctrl.place.result.rating}}</p>
+    <p><strong>Price level:</strong> {{$ctrl.place.result.price_level | ratingformatted}}</p>
+    <p><strong>Rating:</strong> {{$ctrl.place.result.rating | ratingformatted}}</p>
 
     <p><strong>{{$ctrl.place.result.opening_hours.open_now ? 'Open' : 'Closed'}}</strong> now</p>
 
