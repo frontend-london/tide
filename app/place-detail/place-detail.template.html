@@ -13,23 +13,23 @@
         
     <h1>{{$ctrl.place.result.name}}</h1>
 
-    <p>Address: {{$ctrl.place.result.formatted_address}}</p>
+    <p><strong>Address</strong>: {{$ctrl.place.result.formatted_address}}</p>
 
-    <p>Place number: {{$ctrl.place.result.international_place_number}}</p>
+    <p><strong>Phone number:</strong> {{$ctrl.place.result.international_place_number}}</p>
 
-    <p>Price level: {{$ctrl.place.result.price_level}}</p>
-    <p>Rating: {{$ctrl.place.result.rating}}</p>
+    <p><strong>Price level:</strong> {{$ctrl.place.result.price_level}}</p>
+    <p><strong>Rating:</strong> {{$ctrl.place.result.rating}}</p>
 
-    <p>{{$ctrl.place.result.opening_hours.open_now ? 'Open' : 'Closed'}} now</p>
+    <p><strong>{{$ctrl.place.result.opening_hours.open_now ? 'Open' : 'Closed'}}</strong> now</p>
 
-    <p>Url: <a href="{{$ctrl.place.result.url}}" target="_blank">{{$ctrl.place.result.url}}</a></p>
+    <p><strong>Url:</strong> <a href="{{$ctrl.place.result.url}}" target="_blank">{{$ctrl.place.result.url}}</a></p>
 
-    <p ng-if="$ctrl.place.result.website">Website: <a href="{{$ctrl.place.result.website}}" target="_blank">{{$ctrl.place.result.website}}</a></p>
+    <p ng-if="$ctrl.place.result.website"><strong>Website:</strong> <a href="{{$ctrl.place.result.website}}" target="_blank">{{$ctrl.place.result.website}}</a></p>
 
-    <div>Types:
+    <div><strong>Types:</strong>
         <ul class="places__types">
           <li ng-repeat="type in $ctrl.place.result.types">
-            {{type}}
+            {{type | typeformatted}}
           </li>
       </ul>
     </div>
@@ -37,8 +37,8 @@
 
   <div class="col-md-3">
     <div  class="hours">
-      Opening hours:
-
+      <strong>Opening hours:</strong>
+      <br /><br />
       <ul>
         <li ng-repeat="period in $ctrl.place.result.opening_hours.periods">
 
