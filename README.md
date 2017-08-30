@@ -6,6 +6,8 @@ Angular app which retrieves data about pubs and restaurants in close proximity t
 
 Information about places is fetched from  Google Places API.
 
+Live demo: https://enside.pl/projects/tide/
+
 ## Changing sample JSON to real API
 
 By default app is showing static data from json files located in app/api/ folder. It's working like this, to easily demonstrate the applicaton. For real API connection, you need to either use PHP proxy server or allow CORS (Cross Origin Request Security) in your browser.

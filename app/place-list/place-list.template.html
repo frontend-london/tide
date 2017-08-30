@@ -44,7 +44,7 @@
         
           <div ng-repeat="place in $ctrl.places.results | filter:$ctrl.query" class="col-sm-6 places__place" ng-click="$ctrl.go('places/' + place.place_id)">
             <div class="places__item">
-              <img ng-src="{{$ctrl.getImage(place.photos[0].photo_reference)}}" alt="{{place.name}}" class="thumb" />
+              <img ng-if="place.photos[0]" ng-src="{{$ctrl.getImage(place.photos[0].photo_reference)}}" alt="{{place.name}}" class="thumb" />
               <h4><img ng-src="{{place.icon}}" alt="{{place.name}}" class="places__icon" /> {{place.name}}</h4>
               <p>{{place.opening_hours.open_now ? 'Open' : 'Closed'}} now</p>
               <p>Price level: {{place.price_level}} &nbsp; | &nbsp;  Rating: {{place.rating}}</p>
