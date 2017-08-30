@@ -8,6 +8,15 @@ Information about places is fetched from  Google Places API.
 
 Live demo: https://enside.pl/projects/tide/
 
+## No results - daily query limit exceeded
+Sometimes app is not showing places. This is happening, if Google Places API daily limit of queries has been exceeded. To continue, you need to wait few hours or you can switch to json file - change settings in app.condig.js to:
+
+```
+addressApi      : 'api/address.json',
+placeApi        : 'api/place.json',
+placesApi       : 'api/places.json',
+```
+
 ## Changing sample JSON to real API
 
 By default app is showing static data from json files located in app/api/ folder. It's working like this, to easily demonstrate the applicaton. For real API connection, you need to either use PHP proxy server or allow CORS (Cross Origin Request Security) in your browser.
@@ -85,16 +94,18 @@ app/                     --> all the source code of the app (along with unit tes
     dayofweek/...        --> files for the `dayofweek` filter, including JS source code, specs
     place/...            --> files for the `core.place` submodule, including JS source code, specs
     places/...           --> files for the `core.places` submodule, including JS source code, specs
+    ratingformatted/...  --> files for the `ratingformatted` filter, including JS source code, specs
     timeformatted/...    --> files for the `dayofweek` filter, including JS source code, specs
+    typeformatted/...    --> files for the `typeformatted` filter, including JS source code, specs
     core.module.js       --> the core module
   img/...                --> image files
   place-detail/...       --> files for the `placeDetail` module, including JS source code, HTML templates, specs
   place-list/...         --> files for the `placeList` module, including JS source code, HTML templates, specs
   proxy/...              --> PHP proxy to Google Places API
   app.animations.js      --> hooks for running JS animations with `ngAnimate`
-  app.routing.js         --> app routing configuration
   app.config.js          --> app-wide configuration of Angular services
   app.module.js          --> the main app module
+  app.routing.js         --> app routing configuration
   index.html             --> app layout file (the main HTML template file of the app)
 
 node_modules/...         --> development tools (fetched using `npm`)
