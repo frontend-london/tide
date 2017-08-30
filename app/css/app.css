@@ -12,6 +12,17 @@ h1 {
   list-style: none;
 }
 
+@media screen and (min-width: 469px) and (max-width: 992px)  {  
+  .places__form label {
+    width: 24%;
+  }
+
+  .places__form .form-control {
+    width: 75%;
+    display: inline-block;
+  }
+}
+
 .places__place:nth-child(odd) {
   clear: both;
 }
@@ -24,7 +35,7 @@ h1 {
 }
 
 .places__item:hover {
-  background: #f0f0f0;
+  background: #ddd;
   cursor: pointer;
 }
 
@@ -65,11 +76,16 @@ h1 {
   background-color: white;
   display: none;
   float: left;
-  height: 400px;
+  /* height: 400px; */
   margin-bottom: 2em;
   margin-right: 3em;
   padding: 2em;
-  width: 400px;
+  /* width: 400px; */
+  
+  width: auto;
+  height: auto;
+  float: none;
+  max-width: 100%;
 }
 
 .place:first-child {
@@ -83,6 +99,14 @@ h1 {
   overflow: hidden;
   position: relative;
   width: 450px;
+}
+
+@media screen and (max-width: 680px)  {  
+  .place-images {
+    float: none;
+    width: auto;
+    height: auto;
+  }
 }
 
 .place__back {
@@ -112,6 +136,13 @@ h1 {
 
 .hours {
   margin-top: 70px;
+}
+
+@media screen and (max-width: 992px)  {  
+  .hours {
+    margin-top: 0px;
+    float: left;
+  } 
 }
 
 .hours ul {

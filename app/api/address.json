@@ -33,7 +33,7 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Wielka Brytania",
+               "long_name" : "United Kingdom",
                "short_name" : "GB",
                "types" : [ "country", "political" ]
             },
@@ -43,7 +43,7 @@
                "types" : [ "postal_code", "postal_code_prefix" ]
             }
          ],
-         "formatted_address" : "1 Rosebery Ave, London EC1R, Wielka Brytania",
+         "formatted_address" : "1 Rosebery Ave, London EC1R, United Kingdom",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -107,7 +107,7 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Wielka Brytania",
+               "long_name" : "United Kingdom",
                "short_name" : "GB",
                "types" : [ "country", "political" ]
             },
@@ -122,7 +122,7 @@
                "types" : [ "postal_code", "postal_code_prefix" ]
             }
          ],
-         "formatted_address" : "Rosebery Avenue (Stop CU), London EC1R 5EE, Wielka Brytania",
+         "formatted_address" : "Rosebery Avenue (Stop CU), London EC1R 5EE, United Kingdom",
          "geometry" : {
             "location" : {
                "lat" : 51.521919,
@@ -171,12 +171,12 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Wielka Brytania",
+               "long_name" : "United Kingdom",
                "short_name" : "GB",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Londyn, Wielka Brytania",
+         "formatted_address" : "Londyn, United Kingdom",
          "geometry" : {
             "bounds" : {
                "northeast" : {
@@ -240,12 +240,12 @@
                "types" : [ "administrative_area_level_1", "political" ]
             },
             {
-               "long_name" : "Wielka Brytania",
+               "long_name" : "United Kingdom",
                "short_name" : "GB",
                "types" : [ "country", "political" ]
             }
          ],
-         "formatted_address" : "Laystall St, London EC1R 4PG, Wielka Brytania",
+         "formatted_address" : "Laystall St, London EC1R 4PG, United Kingdom",
          "geometry" : {
             "location" : {
                "lat" : 51.5226254,
