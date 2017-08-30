@@ -18,6 +18,6 @@ angular.
     // placeApi        : 'proxy/place.php',
     defaultLocation : '51.5222768,-0.111892117', // White Bear Yard
     defaultRadius   : 1000, 
-    // imagePath    : 'https://maps.googleapis.com/maps/api/place/photo'
-    imagePath       : 'img/photo.jpg' // sample image
+    imagePath    : 'https://maps.googleapis.com/maps/api/place/photo'
+    // imagePath       : 'img/photo.jpg' // sample image
   });
