@@ -6,11 +6,11 @@ Angular app which retrieves data about pubs and restaurants in close proximity t
 
 Information about places is fetched from  Google Places API.
 
-# Changing sample JSON to real API
+## Changing sample JSON to real API
 
 By default app is showing static data from json files located in app/api/ folder. It's working like this, to easily demonstrate the applicaton. For real API connection, you need to either use PHP proxy server or allow CORS (Cross Origin Request Security) in your browser.
 
-## Solution 1 - PHP proxy server:
+### Solution 1 - PHP proxy server:
 
 To run PHP proxy, you need to change settings in app.condig.js to:
 
@@ -22,7 +22,7 @@ placeApi        : 'proxy/place.php',
 
 Then you need to install application somewhere inside htdocs/ folder of apache, and then in your browser go to that folder inside http://localhost/ . Note that, in  server run by command 'npm start' on localhost:8000/ PHP is not working. For Windows, Linux and MAc I recommend Xampp - https://www.apachefriends.org/download.html 
 
-## Solution 2 - Browser extension
+### Solution 2 - Browser extension
 
 By default in Chrome and Firefox you won't be able to connect from localhost to Google Places API because of CORS error. To change it, you can install addon to Chrome or Firefox:
 
@@ -37,13 +37,13 @@ placesApi    : 'https://maps.googleapis.com/maps/api/place/nearbysearch/json',
 placeApi     : 'https://maps.googleapis.com/maps/api/place/details/json',
 ```
 
-# Development with `localPlacesApp`
+## Development with `localPlacesApp`
 
 The following docs describe how you can test and develop this application further.
 
-## Installing Dependencies
+### Installing Dependencies
 
-The application relies upon various Node.js tools, such as [Bower][bower] and [Karma][karma]. You can install these by running:
+The application relies upon various Node.js tools, such as Bower and Karma. You can install these by running:
 
 ```
 npm install
@@ -55,15 +55,15 @@ tutorial.
 Most of the scripts described below will run this automatically but it doesn't do any harm to run
 it whenever you like.
 
-## Running the Application during Development
+### Running the Application during Development
 
 - Run `npm start`.
 - Navigate your browser to [http://localhost:8000/](http://localhost:8000/) to see the application 
   running.
 
-## Unit Testing
+### Unit Testing
 
-For unit testing I'm using [Jasmine][jasmine] and [Karma][karma] libraries
+For unit testing I'm using Jasmine and Karma libraries
 
 - Start Karma with `npm test`.
 - A browser will start and connect to the Karma server. Chrome and Firefox are the default browsers,
@@ -71,7 +71,7 @@ For unit testing I'm using [Jasmine][jasmine] and [Karma][karma] libraries
 - Karma will sit and watch your application and test JavaScript files. To run or re-run tests just
   change any of your these files.
 
-# Application Directory Layout
+## Application Directory Layout
 
 ```
 app/                     --> all the source code of the app (along with unit tests)
@@ -102,7 +102,7 @@ package.json             --> Node.js specific metadata, including development to
 ```
 
 
-# Author
+## Author
 
 Made by Piotr Kołodziejczyk, August 2017
 
